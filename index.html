@@ -7,11 +7,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Weather Alerts App</h1>
-  <input type="text" id="state-input" placeholder="Enter state abbreviation">
-  <button id="fetch-alerts">Get Weather Alerts</button>
-  <div id="alerts-display"></div>
-  <div id="error-message" class="hidden"></div>
+  <main>
+    <h1>Weather Alerts App</h1>
+    <label for="state-input">U.S. state abbreviation</label>
+    <div class="search-controls">
+      <input type="text" id="state-input" placeholder="Enter state abbreviation" maxlength="2" autocomplete="off">
+      <button id="fetch-alerts" type="button">Get Weather Alerts</button>
+    </div>
+    <div id="loading-spinner" class="hidden" role="status" aria-live="polite">Loading weather alerts...</div>
+    <div id="error-message" class="hidden" role="alert"></div>
+    <section id="alerts-display" aria-live="polite"></section>
+  </main>
   <script src="./index.js"></script>
 </body>
 </html>

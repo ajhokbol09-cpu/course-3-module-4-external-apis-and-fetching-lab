@@ -1,34 +1,43 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  padding: 24px;
+  background-color: #f4f7fb;
   color: #333;
   line-height: 1.6;
 }
 
-h1 {
-  text-align: center;
-  margin: 20px 0;
+main {
+  max-width: 640px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Input Field and Button */
-#city-input {
-  display: block;
-  margin: 20px auto;
-  padding: 10px;
-  width: 80%;
-  max-width: 400px;
+h1 {
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+#state-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-#fetch-weather {
-  display: block;
-  margin: 10px auto;
-  padding: 10px 20px;
+.search-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+#fetch-alerts {
+  padding: 10px 16px;
   font-size: 16px;
   background-color: #007bff;
   color: #fff;
@@ -37,43 +46,53 @@ h1 {
   cursor: pointer;
 }
 
-#fetch-weather:hover {
+#fetch-alerts:hover:not(:disabled) {
   background-color: #0056b3;
 }
 
-/* Weather Display Section */
-#weather-display {
-  margin: 20px auto;
-  padding: 10px;
-  width: 90%;
-  max-width: 600px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#fetch-alerts:disabled {
+  cursor: wait;
+  opacity: 0.7;
 }
 
-/* Error Message */
-#error-message {
-  color: red;
+#alerts-display {
+  margin-top: 20px;
+}
+
+#alerts-display p {
   font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
 }
 
-/* Hidden Class for Error Handling */
+#alerts-display li + li {
+  margin-top: 8px;
+}
+
+#error-message {
+  color: #b42318;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+#loading-spinner {
+  margin-top: 16px;
+  color: #555;
+}
+
 .hidden {
   display: none;
 }
 
-/* BONUS: Loading Spinner */
-#loading-spinner {
-  display: none;
-  margin: 20px auto;
-  text-align: center;
-}
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
 
-#loading-spinner img {
-  width: 50px;
-  height: 50px;
+  main {
+    margin: 12px auto;
+    padding: 18px;
+  }
+
+  .search-controls {
+    flex-direction: column;
+  }
 }
